@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- navbar -->
+<div th:replace="~{nav.html::navbar}"></div>
+<h4>마이페이지 입니다.</h4>
+
+<div sec:authentication="principal"></div>
+<div sec:authorize="hasAuthority('일반유저')"></div>
+
+
+</body>
+</html>
