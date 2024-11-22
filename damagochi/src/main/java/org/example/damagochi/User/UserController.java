@@ -20,7 +20,8 @@ public class UserController {
     public ResponseEntity<Map<String, String>> signup(@ModelAttribute UserSignupRequest request) {
         userService.signup(request);
 
-        return ResponseEntity.ok(Map.of("message", "회원가입 성공", "username", request.getUsername(), "nickname", request.getNickname()));
+        return ResponseEntity
+                .ok(Map.of("message", "회원가입 성공", "username", request.getUsername(), "nickname", request.getNickname()));
     }
 
     @PostMapping("/login")
@@ -36,6 +37,7 @@ public class UserController {
             @AuthenticationPrincipal UserDetails userDetails) {
         userService.updateProfile(request, userDetails.getUsername());
 
-        return ResponseEntity.ok(Map.of("message", "프로필 수정 성공", "nickname, userimage", request.getNickname() + ", "+ request.getUserimage() ));
+        return ResponseEntity.ok(Map.of("message", "프로필 수정 성공", "nickname, userimage",
+                request.getNickname() + ", " + request.getUserimage()));
     }
 }
