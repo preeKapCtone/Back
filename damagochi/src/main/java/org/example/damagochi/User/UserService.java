@@ -37,7 +37,7 @@ public class UserService {
         }
 
         String token = jwtTokenProvider.createToken(user.getUsername());
-        return new UserLoginResponse(token, user.getNickname(), user.getUserimage());
+        return new UserLoginResponse(token, user.getNickname(), user.getUserimage(), user.getUsername());
     }
 
     @Transactional

@@ -32,6 +32,7 @@ public class UserController {
         response.put("token", loginResponse.getToken());
         response.put("nickname", loginResponse.getNickname());
         response.put("userimage", loginResponse.getUserimage());
+        response.put("username", loginResponse.getUsername());
 
         return ResponseEntity.ok(response);
     }

@@ -12,4 +12,5 @@ public class UserLoginResponse {
     private String token;
     private String nickname;
     private Integer userimage;
+    private String username;
 }
