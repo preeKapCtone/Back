@@ -28,7 +28,7 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public String login(UserLoginRequest request) {
+    public UserLoginResponse login(UserLoginRequest request) {
         User user = userRepository.findByUsername(request.getUsername())
                 .orElseThrow(() -> new RuntimeException("사용자를 찾을 수 없습니다."));
 
@@ -36,7 +36,8 @@ public class UserService {
             throw new RuntimeException("잘못된 비밀번호입니다.");
         }
 
-        return jwtTokenProvider.createToken(user.getUsername());
+        String token = jwtTokenProvider.createToken(user.getUsername());
+        return new UserLoginResponse(token, user.getNickname(), user.getUserimage());
     }
 
     @Transactional
@@ -47,8 +48,7 @@ public class UserService {
         if (request.getNickname() != null) {
             user.setNickname(request.getNickname());
         }
-
-
+        user.setUserimage(request.getUserimage());
     }
 }
 
