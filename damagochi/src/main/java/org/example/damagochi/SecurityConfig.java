@@ -32,7 +32,7 @@ public class SecurityConfig {
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // 세션 비활성화
                 .authorizeHttpRequests(auth -> auth
 
-                        .requestMatchers("/api/signup", "/api/login", "/*").permitAll() // 인증 없이 접근 가능한 경로
+                        .requestMatchers("/api/signup", "/api/login", "/").permitAll() // 인증 없이 접근 가능한 경로
                         .anyRequest().authenticated() // 나머지 요청은 인증 필요
 
                 )
@@ -45,7 +45,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:5173")); // 허용할 Origin
+        configuration.setAllowedOrigins(List.of("http://localhost:5173", "http://192.168.0.2:5173", "http://172.31.4.129:5173", "http://43.202.52.225:5173")); // 허용할 Origin
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")); // 허용할 HTTP 메서드
         configuration.setAllowedHeaders(List.of("*")); // 허용할 헤더
         configuration.setAllowCredentials(true); // 인증 정보 허용
