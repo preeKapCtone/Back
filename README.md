@@ -131,7 +131,7 @@
     <td>@dmp100</td>
   </tr>
   <tr>
-    <td>백엔드 <br>(Spring Boot)</td>
+    <td>RESTful API 설계·구현<br>클라우드 인프라 구축</td>
     <td>프로젝트 총괄(팀장), <br>AI 모델 구현, <br>API 서버 구축, <br>Unity Interface</td>
   </tr>
 </table>
