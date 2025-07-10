@@ -154,10 +154,6 @@
 ![image](https://github.com/user-attachments/assets/898cdc0c-5494-4cb7-bd68-905847237625)
 
 
-## 🟦 ERD
-
-![image](https://github.com/user-attachments/assets/ab6bb7df-b31c-4916-a7a5-8c0f2de10e65)
-
 
 ## 👀 화면 구성
 
